@@ -16,7 +16,6 @@ import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
-
 const registerSchema = yup.object().shape({
     firstName: yup.string().required("required"),
     lastName: yup.string().required("required"),
@@ -27,10 +26,12 @@ const registerSchema = yup.object().shape({
     picture: yup.string().required("required"),
   });
 
+
   const loginSchema = yup.object().shape({
     email: yup.string().email("invalid email").required("required"),
     password: yup.string().required("required"),
   });
+
 
   const initialValuesRegister = {
     firstName: "",
@@ -41,11 +42,12 @@ const registerSchema = yup.object().shape({
     occupation: "",
     picture: "",
   };
-
+  
   const initialValuesLogin = {
     email: "",
     password: "",
   };
+
 
   const Form = () => {
     const [pageType, setPageType] = useState("login");
@@ -274,4 +276,3 @@ const registerSchema = yup.object().shape({
   };
   
   export default Form;
-

@@ -7,14 +7,16 @@ import PostsWidget from "scenes/widgets/PostsWidget";
 import AdvertWidget from "scenes/widgets/AdvertWidget";
 import FriendListWidget from "scenes/widgets/FriendListWidget";
 
-const HomePage = () => {
-  const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
-  const { _id, picturePath } = useSelector((state) => state.user);
 
-  return (
-    <Box>
-      <Navbar />
-      <Box
+const HomePage = () => {
+    const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
+    const { _id, picturePath } = useSelector((state) => state.user);
+
+
+    return <Box>
+       <Navbar/>
+       <box>
+       <Box
         width="100%"
         padding="2rem 6%"
         display={isNonMobileScreens ? "flex" : "block"}
@@ -39,8 +41,10 @@ const HomePage = () => {
           </Box>
         )}
       </Box>
+
+       </box>
     </Box>
-  );
-};
+}
 
 export default HomePage;
+
